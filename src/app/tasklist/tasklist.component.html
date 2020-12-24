@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Tâches :</h1>
+    <table class="table" >
+    <tr>
+    <td>Tire</td><td>Description</td><td>Actions</td>
+    </tr>
+    <ng-container *ngIf="tasks.length >0">
+        <tr *ngFor="let p of tasks;index as idx">
+            <td>To Do n°{{idx+1}}</td>
+            <td><a routerLink="tasks/update/{{ p.id }}"></a>{{ p.description }}</td>
+            <td><button class="btn btn-sm btn-danger" (click)="deleteTask(p.id)">Delete</button></td>
+            <!-- <td>Edit</td> -->
+            <td>
+        <button type="button" class="btn btn-lesson" (click)="open(p)">Lesson Details</button>
+        
+            </td>
+        </tr>
+        
+    </ng-container>
+    <ng-container *ngIf="tasks.length == 0">
+ghbjhb
+        
+    </ng-container>
+    </table>
+    
+    <ng-template #showLoading>
+    Loading...
+    </ng-template>
+    </div>
+
+
+
+
+
+
+
+

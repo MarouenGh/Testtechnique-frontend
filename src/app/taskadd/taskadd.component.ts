@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { TaskService } from 'src/app/services/task.service';
 import { Task } from '../models/Task';
 
@@ -10,11 +11,11 @@ import { Task } from '../models/Task';
 })
 export class TaskaddComponent implements OnInit {
 
-  frm = new FormGroup({
+    frm = new FormGroup({
     title: new FormControl(''),
     body: new FormControl('')
   });
-  constructor(private service: TaskService) { }
+  constructor(private service: TaskService,private toastr: ToastrService) { }
   ngOnInit() {}
   submitPost(e) {
     e.preventDefault();
@@ -23,7 +24,10 @@ export class TaskaddComponent implements OnInit {
 
 
     this.service.postData(taskToAdd).subscribe(response => {
-      console.log(response);
+      this.toastr.success('Tâche ajoutée avec succés');
+      this.ngOnInit();
     });
+
+  
   }
 }

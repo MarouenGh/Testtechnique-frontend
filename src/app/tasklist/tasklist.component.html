@@ -2,23 +2,20 @@
     <h1>Tâches :</h1>
     <table class="table" >
     <tr>
-    <td>Tire</td><td>Description</td><td>Actions</td>
+    <td>Titre</td><td>Description</td><td>Actions</td>
     </tr>
     <ng-container *ngIf="tasks.length >0">
         <tr *ngFor="let p of tasks;index as idx">
             <td>To Do n°{{idx+1}}</td>
             <td><a routerLink="tasks/update/{{ p.id }}"></a>{{ p.description }}</td>
-            <td><button class="btn btn-sm btn-danger" (click)="deleteTask(p.id)">Delete</button></td>
-            <!-- <td>Edit</td> -->
-            <td>
-        <button type="button" class="btn btn-lesson" (click)="open(p)">Lesson Details</button>
-        
-            </td>
+            <td><button type="button" class="btn btn-sm btn-primary" (click)="open(p)">Modifier</button></td>
+            <td><button class="btn btn-sm btn-danger" (click)="deleteTask(p.id)">Supprimer</button></td>
+           
         </tr>
         
     </ng-container>
     <ng-container *ngIf="tasks.length == 0">
-Aucune tache disponible
+    Aucune tâche disponible
         
     </ng-container>
     </table>
@@ -26,7 +23,7 @@ Aucune tache disponible
     <ng-template #showLoading>
     Loading...
     </ng-template>
-    </div>
+</div>
 
 
 

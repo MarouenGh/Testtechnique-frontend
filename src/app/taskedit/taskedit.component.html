@@ -1,7 +1,7 @@
 <form [formGroup]="frm" (ngSubmit)="updateTask($event)">
 
 <div class="modal-header">
-    <h1>Update Task</h1>
+    <h1>Modifer Tâche</h1>
 	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -14,9 +14,8 @@
 			<p class="card-text"><b>Description: </b>{{task.description}}</p>
 		</div>
     </div> -->
-        <label>Title : </label><br>
-        <input type="text" placeholder="Title" formControlName="title" class="form-control"/>    <br>
-        <label>Body : </label><br>
+       
+        <label>Description : </label><br>
         <textarea formControlName="body" class="form-control" rows="10"></textarea><br><br>
 </div>
 <div class="modal-footer">

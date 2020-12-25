@@ -29,7 +29,7 @@ export class TasklistComponent implements OnInit {
   
   deleteTask(id: Number){
     this.service.deleteTask(id).subscribe(data => {
-      this.toastr.success('the task was deleted successfully');
+      this.toastr.success('Tâche supprimée avec succés ');
       this.ngOnInit();
     });
   }
